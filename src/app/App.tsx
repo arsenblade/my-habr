@@ -8,12 +8,11 @@ import { Navbar } from 'widgets/Navbar';
 
 
 const App = () => {
-  const {theme, toggleTheme} = useTheme()
+  const {theme} = useTheme()
 
   return (
     <div className={classNames('app', {}, [theme])}>
       <Navbar />
-      <button onClick={() => toggleTheme()}>Toggle</button>
       <h1>gbndbd</h1>
       <AppRouter />
     </div>

@@ -40,11 +40,19 @@ module.exports = {
     'react/button-has-type': 'off',
     'i18next/no-literal-string': ['error', {
       markupOnly: true,
-      ignoreAttribute: ['to'],
+      ignoreAttribute: ['to', 'className', 'data-testid'],
     }],
     'max-len': ['warn', { ignoreComments: true }],
   },
   globals: {
     __IS_DEV__: true,
   },
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off',
+      },
+    },
+  ],
 };
